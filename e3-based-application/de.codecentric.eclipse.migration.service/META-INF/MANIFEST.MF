@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Service
+Bundle-SymbolicName: de.codecentric.eclipse.migration.service
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: de.codecentric.eclipse.migration.model;bundle-version="1.0.0"
+Export-Package: de.codecentric.eclipse.migration.service
