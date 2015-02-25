@@ -3,7 +3,6 @@
 
 <product name="codecentric Migration Tutorial" uid="de.codecentric.eclipse.migration.e4" id="de.codecentric.eclipse.migration.e4.ui.MigrationTutorial" application="de.codecentric.eclipse.migration.e4.ui.application" version="1.0.0" useFeatures="true" includeLaunchers="true">
 
-
    <configIni use="default">
    </configIni>
 
@@ -14,7 +13,6 @@
 
    <windowImages i16="/de.codecentric.eclipse.migration.e4.ui/icons/cc_logo_16.png" i32="/de.codecentric.eclipse.migration.e4.ui/icons/cc_logo_32.png"/>
 
-
    <launcher>
       <solaris/>
       <win useIco="false">
@@ -24,7 +22,6 @@
       </win>
    </launcher>
 
-
    <vm>
    </vm>
 
@@ -33,7 +30,10 @@
 
    <features>
       <feature id="de.codecentric.eclipse.migration.e4.feature" version="1.0.0.qualifier"/>
-      <feature id="org.eclipse.rcp" version="3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.e4.rcp"/>
    </features>
 
    <configurations>
