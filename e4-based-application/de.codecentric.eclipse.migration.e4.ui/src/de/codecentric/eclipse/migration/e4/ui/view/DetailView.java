@@ -1,15 +1,20 @@
 package de.codecentric.eclipse.migration.e4.ui.view;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.inject.Inject;
+
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
+import org.eclipse.e4.ui.workbench.modeling.ISelectionListener;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.databinding.viewers.ViewersObservables;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
@@ -17,29 +22,26 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.ISelectionListener;
-import org.eclipse.ui.ISelectionService;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.part.ViewPart;
 
 import de.codecentric.eclipse.migration.e4.model.Person;
 import de.codecentric.eclipse.migration.e4.model.Person.Gender;
 import de.codecentric.eclipse.migration.e4.ui.view.overview.OverviewView;
 
-public class DetailView extends ViewPart {
+public class DetailView {
+
+	@Inject
+	ESelectionService selectionService;
 
 	Person activePerson = new Person(-1);
 	
 	ISelectionListener selectionListener = new ISelectionListener() {
 		
 		@Override
-		public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-			if (part instanceof OverviewView 
-					&& selection instanceof IStructuredSelection) {
-				
-				if (!selection.isEmpty()) {
-					Object selected = ((IStructuredSelection) selection).getFirstElement();
-					Person p = (Person) selected;
+		public void selectionChanged(MPart part, Object selection) {
+			if (part.getObject() instanceof OverviewView) {
+				if (selection != null
+					&& selection instanceof Person) {
+					Person p = (Person) selection;
 					activePerson.setFirstName(p.getFirstName());
 					activePerson.setLastName(p.getLastName());
 					activePerson.setMarried(p.isMarried());
@@ -55,7 +57,7 @@ public class DetailView extends ViewPart {
 		}
 	};
 	
-	@Override
+	@PostConstruct
 	public void createPartControl(Composite parent) {
 		parent.setLayout(new GridLayout(2, false));
 		
@@ -120,20 +122,11 @@ public class DetailView extends ViewPart {
 	    ctx.bindValue(gTarget, gModel);
 	    
 		// add the selection listener
-		getSite().getWorkbenchWindow().getSelectionService().addSelectionListener(selectionListener);
+		selectionService.addSelectionListener(selectionListener);
 	}
 
-	@Override
-	public void setFocus() {
-	}
-	
-	@Override
+	@PreDestroy
 	public void dispose() {
-		// on disposal remove the selection listener
-		ISelectionService s = getSite().getWorkbenchWindow().getSelectionService();
-		s.removeSelectionListener(selectionListener);
-		
-		super.dispose();
+		selectionService.removeSelectionListener(selectionListener);
 	}
-
 }

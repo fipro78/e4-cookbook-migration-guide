@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_aOmlwMG9EeSnBsf5HSaYaA">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_3CDREMG_EeSnBsf5HSaYaA" featurename="handlers" parentElementId="org.eclipse.e4.legacy.ide.application">
+    <elements xsi:type="commands:Handler" xmi:id="_7apB8MG_EeSnBsf5HSaYaA" elementId="de.codecentric.eclipse.migration.e4.ui.handler.0" contributionURI="bundleclass://de.codecentric.eclipse.migration.e4.ui/de.codecentric.eclipse.migration.e4.ui.action.OpenDialogAction" command="_-aoBIMG_EeSnBsf5HSaYaA"/>
+    <elements xsi:type="commands:Handler" xmi:id="_oSuccMHsEeSnBsf5HSaYaA" elementId="de.codecentric.eclipse.migration.e4.ui.handler.1" contributionURI="bundleclass://de.codecentric.eclipse.migration.e4.ui/de.codecentric.eclipse.migration.e4.ui.handler.OpenDialogHandler" command="_i0ypkMHrEeSnBsf5HSaYaA"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_8AtjcMG_EeSnBsf5HSaYaA" featurename="commands" parentElementId="org.eclipse.e4.legacy.ide.application">
+    <elements xsi:type="commands:Command" xmi:id="_-aoBIMG_EeSnBsf5HSaYaA" elementId="de.codecentric.eclipse.migration.e4.ui.command.openDialogAction" commandName="Open Dialog"/>
+    <elements xsi:type="commands:Command" xmi:id="_i0ypkMHrEeSnBsf5HSaYaA" elementId="de.codecentric.eclipse.migration.e4.ui.command.openDialog" commandName="Open Dialog"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="__vQ40MG_EeSnBsf5HSaYaA" featurename="menuContributions" parentElementId="org.eclipse.e4.legacy.ide.application">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_LDNSQMHAEeSnBsf5HSaYaA" elementId="de.codecentric.eclipse.migration.e4.ui.menucontribution.0" parentId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_uDYQcMHAEeSnBsf5HSaYaA" elementId="de.codecentric.eclipse.migration.e4.ui.actionMenu" label="Actions">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_YFCw4MHAEeSnBsf5HSaYaA" elementId="de.codecentric.eclipse.migration.e4.ui.item.action.openDialog" label="Open Dialog" command="_-aoBIMG_EeSnBsf5HSaYaA"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_x9HzQMHuEeSnBsf5HSaYaA" elementId="de.codecentric.eclipse.migration.e4.ui.commandMenu" label="Commands">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_Ivn6sMHvEeSnBsf5HSaYaA" elementId="de.codecentric.eclipse.migration.e4.ui.item.command.openDialog" label="Open Dialog" command="_i0ypkMHrEeSnBsf5HSaYaA"/>
+      </children>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

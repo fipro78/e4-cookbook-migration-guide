@@ -3,33 +3,43 @@ package de.codecentric.eclipse.migration.e4.ui.view.overview;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.observable.list.WritableList;
+import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.part.ViewPart;
 
 import de.codecentric.eclipse.migration.e4.model.Person;
 import de.codecentric.eclipse.migration.e4.service.PersonService;
 import de.codecentric.eclipse.migration.e4.ui.editor.PersonEditor;
 import de.codecentric.eclipse.migration.e4.ui.editor.PersonEditorInput;
 
-public class OverviewView extends ViewPart {
+public class OverviewView {
 
 	TableViewer viewer;
 	
-	@Override
-	public void createPartControl(Composite parent) {
+	@Inject
+	ESelectionService selectionService;
+	
+	@PostConstruct
+	public void createPartControl(Composite parent, final IWorkbenchPage workbenchPage) {
 		parent.setLayout(new GridLayout());
 		
 		IObservable list = new WritableList(PersonService.getPersons(10), Person.class);
@@ -68,7 +78,16 @@ public class OverviewView extends ViewPart {
 		viewer.setInput(list);
 		
 		// set the viewer as selection provider
-		getSite().setSelectionProvider(viewer);
+//		getSite().setSelectionProvider(viewer);
+		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				IStructuredSelection selection = (IStructuredSelection)event.getSelection();
+				Person myInstance = (Person)selection.getFirstElement();
+				selectionService.setSelection(myInstance);
+			}
+		});
 		
 		// hook double click for opening an editor
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
@@ -88,10 +107,10 @@ public class OverviewView extends ViewPart {
 								viewer.refresh();
 							}
 						});
+
 						PersonEditorInput input = new PersonEditorInput(person);
 				        try {
-				        	getSite().getWorkbenchWindow().getActivePage().openEditor(input, PersonEditor.ID);
-
+				        	workbenchPage.openEditor(input, PersonEditor.ID);
 				        } catch (PartInitException e) {
 				        	throw new RuntimeException(e);
 				        }
@@ -101,7 +120,7 @@ public class OverviewView extends ViewPart {
 		});
 	}
 
-	@Override
+	@Focus
 	public void setFocus() {
 		this.viewer.getControl().setFocus();
 	}
