@@ -1,10 +1,15 @@
 package de.codecentric.eclipse.migration.ui.view;
 
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.ISelectionService;
@@ -13,6 +18,7 @@ import org.eclipse.ui.part.ViewPart;
 
 import de.codecentric.eclipse.migration.model.Person;
 import de.codecentric.eclipse.migration.model.Person.Gender;
+import de.codecentric.eclipse.migration.ui.Activator;
 import de.codecentric.eclipse.migration.ui.view.overview.OverviewView;
 
 public class DescriptionView extends ViewPart {
@@ -44,7 +50,32 @@ public class DescriptionView extends ViewPart {
 	public void createPartControl(Composite parent) {
 		parent.setLayout(new FillLayout());
 		description = new Text(parent, SWT.MULTI | SWT.WRAP | SWT.READ_ONLY);
+		
+		// read preferences to set the initial text color
+		String color = Platform.getPreferencesService().
+				  getString("de.codecentric.eclipse.migration.ui", "description_color", "black", null);
+		
+		Color toUse = "blue".equals(color) ? 
+				Display.getDefault().getSystemColor(SWT.COLOR_BLUE) : Display.getDefault().getSystemColor(SWT.COLOR_BLACK);
+		
+		description.setForeground(toUse);
 
+		// register a listener on the PreferencesStore to react on changes
+		Activator.getDefault().getPreferenceStore().addPropertyChangeListener(
+				new IPropertyChangeListener() {
+					@Override
+					public void propertyChange(PropertyChangeEvent event) {
+						if (event.getProperty() == "description_color") {
+							Color toUse = "blue".equals(event.getNewValue()) ? 
+									Display.getDefault().getSystemColor(SWT.COLOR_BLUE) : Display.getDefault().getSystemColor(SWT.COLOR_BLACK);
+							
+							if (description != null && !description.isDisposed()) {
+								description.setForeground(toUse);
+							}
+						}
+					}
+				});
+		
 		getSite().getWorkbenchWindow().getSelectionService().addSelectionListener(selectionListener);
 	}
 

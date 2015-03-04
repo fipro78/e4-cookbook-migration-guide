@@ -93,6 +93,11 @@
                   label="Dialog öffnen"
                   style="push">
             </command>
+            <command
+                  commandId="org.eclipse.ui.window.preferences"
+                  label="Preferences"
+                  style="push">
+            </command>
          </menu>
       </menuContribution>
    </extension>
@@ -141,6 +146,14 @@
             id="de.codecentric.eclipse.migration.ui.editor.personeditor"
             name="Person Editor">
       </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="de.codecentric.eclipse.migration.ui.preferences.DescriptionPreferencePage"
+            id="de.codecentric.eclipse.migration.ui.page1"
+            name="Description">
+      </page>
    </extension>
 
 </plugin>
