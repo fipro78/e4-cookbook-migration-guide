@@ -5,10 +5,13 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Text;
 
 import de.codecentric.eclipse.migration.e4.model.Person;
@@ -35,6 +38,19 @@ public class DescriptionView {
 			else {
 				description.setText("");
 			}
+		}
+	}
+	
+	@Inject
+	@Optional
+	void setTextColor(
+			@Preference(nodePath="de.codecentric.eclipse.migration.e4.ui", value="description_color") String color) {
+
+		Color toUse = "blue".equals(color) ? 
+				Display.getDefault().getSystemColor(SWT.COLOR_BLUE) : Display.getDefault().getSystemColor(SWT.COLOR_BLACK);
+		
+		if (description != null && !description.isDisposed()) {
+			description.setForeground(toUse);
 		}
 	}
 }

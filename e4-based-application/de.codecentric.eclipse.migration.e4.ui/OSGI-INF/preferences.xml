@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="de.codecentric.eclipse.migration.e4.ui.preferences">
+   <implementation class="de.codecentric.eclipse.migration.e4.ui.preferences.DescriptionPreferenceContribution"/>
+   <service>
+      <provide interface="de.codecentric.eclipse.migration.e4.service.preferences.PreferenceNodeContribution"/>
+   </service>
+</scr:component>
