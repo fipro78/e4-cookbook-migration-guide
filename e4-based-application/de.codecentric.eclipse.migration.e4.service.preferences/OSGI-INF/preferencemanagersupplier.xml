@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="de.codecentric.eclipse.migration.e4.service.preferences">
-   <implementation class="de.codecentric.eclipse.migration.e4.service.preferences.impl.PreferenceManagerSupplier"/>
-   <property name="dependency.injection.annotation" type="String" value="de.codecentric.eclipse.migration.e4.service.preferences.PrefMgr"/>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.fipro.eclipse.migration.e4.service.preferences">
+   <implementation class="org.fipro.eclipse.migration.e4.service.preferences.impl.PreferenceManagerSupplier"/>
+   <property name="dependency.injection.annotation" type="String" value="org.fipro.eclipse.migration.e4.service.preferences.PrefMgr"/>
    <service>
       <provide interface="org.eclipse.e4.core.di.suppliers.ExtendedObjectSupplier"/>
    </service>
-   <reference bind="addPreferenceNode" cardinality="0..n" interface="de.codecentric.eclipse.migration.e4.service.preferences.PreferenceNodeContribution" name="PreferenceNodeContribution" policy="dynamic" unbind="removePreferenceNode"/>
+   <reference bind="addPreferenceNode" cardinality="0..n" interface="org.fipro.eclipse.migration.e4.service.preferences.PreferenceNodeContribution" name="PreferenceNodeContribution" policy="dynamic" unbind="removePreferenceNode"/>
 </scr:component>

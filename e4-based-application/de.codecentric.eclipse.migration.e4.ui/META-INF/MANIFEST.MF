@@ -1,13 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Ui
-Bundle-SymbolicName: de.codecentric.eclipse.migration.e4.ui;singleton:=true
+Bundle-Name: Migration Application UI
+Bundle-SymbolicName: org.fipro.eclipse.migration.e4.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.codecentric.eclipse.migration.e4.ui.Activator
+Bundle-Activator: org.fipro.eclipse.migration.e4.ui.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- de.codecentric.eclipse.migration.e4.model;bundle-version="1.0.0",
- de.codecentric.eclipse.migration.e4.service;bundle-version="1.0.0",
  org.eclipse.core.databinding;bundle-version="1.4.0",
  org.eclipse.core.databinding.beans;bundle-version="1.2.100",
  org.eclipse.core.databinding.property;bundle-version="1.4.0",
@@ -18,8 +16,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.e4.ui.model.workbench;bundle-version="1.1.0",
  org.eclipse.e4.ui.services;bundle-version="1.1.0",
  org.eclipse.e4.core.di.extensions;bundle-version="0.12.0",
- de.codecentric.eclipse.migration.e4.service.preferences;bundle-version="1.0.0",
- javax.inject
+ javax.inject,
+ org.eclipse.osgi.services;bundle-version="3.5.0",
+ org.fipro.eclipse.migration.e4.model;bundle-version="1.0.0",
+ org.fipro.eclipse.migration.e4.service;bundle-version="1.0.0",
+ org.fipro.eclipse.migration.e4.service.preferences;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Service-Component: OSGI-INF/preferences.xml

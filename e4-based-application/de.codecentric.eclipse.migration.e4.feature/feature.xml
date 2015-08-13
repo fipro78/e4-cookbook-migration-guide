@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.codecentric.eclipse.migration.e4.feature"
-      label="Feature"
+      id="org.fipro.eclipse.migration.e4.feature"
+      label="Migration Application Feature"
       version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
@@ -17,28 +17,28 @@
    </license>
 
    <plugin
-         id="de.codecentric.eclipse.migration.e4.model"
+         id="org.fipro.eclipse.migration.e4.model"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.codecentric.eclipse.migration.e4.service"
+         id="org.fipro.eclipse.migration.e4.service"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.codecentric.eclipse.migration.e4.ui"
+         id="org.fipro.eclipse.migration.e4.service.preferences"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.codecentric.eclipse.migration.e4.service.preferences"
+         id="org.fipro.eclipse.migration.e4.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -6,7 +6,7 @@
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
-               class="de.codecentric.eclipse.migration.e4.ui.Application">
+               class="org.fipro.eclipse.migration.e4.ui.Application">
          </run>
       </application>
    </extension>
@@ -14,8 +14,8 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             name="RCP Perspective"
-            class="de.codecentric.eclipse.migration.e4.ui.Perspective"
-            id="de.codecentric.eclipse.migration.ui.perspective">
+            class="org.fipro.eclipse.migration.e4.ui.Perspective"
+            id="org.fipro.eclipse.migration.ui.perspective">
       </perspective>
    </extension>
    <extension
@@ -23,23 +23,23 @@
       <e4view
             name="Overview"
             icon="icons/prop_ps.gif"
-            class="de.codecentric.eclipse.migration.e4.ui.view.overview.OverviewView"
+            class="org.fipro.eclipse.migration.e4.ui.view.overview.OverviewView"
             restorable="true"
-            id="de.codecentric.eclipse.migration.e4.ui.overview">
+            id="org.fipro.eclipse.migration.e4.ui.overview">
       </e4view>
       <e4view
             name="Description"
             icon="icons/environment_obj.gif"
-            class="de.codecentric.eclipse.migration.e4.ui.view.DescriptionView"
+            class="org.fipro.eclipse.migration.e4.ui.view.DescriptionView"
             restorable="true"
-            id="de.codecentric.eclipse.migration.e4.ui.description">
+            id="org.fipro.eclipse.migration.e4.ui.description">
       </e4view>
       <e4view
             name="Details"
             icon="icons/editor.gif"
-            class="de.codecentric.eclipse.migration.e4.ui.view.DetailView"
+            class="org.fipro.eclipse.migration.e4.ui.view.DetailView"
             restorable="true"
-            id="de.codecentric.eclipse.migration.e4.ui.details">
+            id="org.fipro.eclipse.migration.e4.ui.details">
       </e4view>
    </extension>
    <extension
@@ -49,14 +49,14 @@
          <view
                minimized="false"
                relative="org.eclipse.ui.editorss"
-               id="de.codecentric.eclipse.migration.e4.ui.overview"
+               id="org.fipro.eclipse.migration.e4.ui.overview"
                relationship="left">
          </view>
          <view
                minimized="false"
                ratio="0.75"
-               relative="de.codecentric.eclipse.migration.e4.ui.overview"
-               id="de.codecentric.eclipse.migration.e4.ui.description"
+               relative="org.fipro.eclipse.migration.e4.ui.overview"
+               id="org.fipro.eclipse.migration.e4.ui.description"
                relationship="bottom">
          </view>
       </perspectiveExtension>
@@ -65,11 +65,11 @@
          id="MigrationTutorial"
          point="org.eclipse.core.runtime.products">
       <product
-            application="de.codecentric.eclipse.migration.e4.ui.application"
-            name="codecentric Migration Tutorial">
+            application="org.fipro.eclipse.migration.e4.ui.application"
+            name="Eclipse Migration Tutorial">
          <property
                name="appName"
-               value="codecentric Migration Tutorial">
+               value="Eclipse Migration Tutorial">
          </property>
          <property
                name="windowImages"
@@ -83,12 +83,12 @@
             default="false"
             name="Person Editor"
             icon="icons/editor.gif"
-            class="de.codecentric.eclipse.migration.e4.ui.editor.PersonEditor"
-            id="de.codecentric.eclipse.migration.ui.editor.personeditor">
+            class="org.fipro.eclipse.migration.e4.ui.editor.PersonEditor"
+            id="org.fipro.eclipse.migration.ui.editor.personeditor">
       </editor>
    </extension>
    <extension
-         id="de.codecentric.eclipse.migration.e4.ui.fragment"
+         id="org.fipro.eclipse.migration.e4.ui.fragment"
          point="org.eclipse.e4.workbench.model">
       <fragment
             apply="always"

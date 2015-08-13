@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Service
-Bundle-SymbolicName: de.codecentric.eclipse.migration.e4.service
+Bundle-Name: Migration Application Services
+Bundle-SymbolicName: org.fipro.eclipse.migration.e4.service
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: de.codecentric.eclipse.migration.e4.model;bundle-version="1.0.0"
-Export-Package: de.codecentric.eclipse.migration.e4.service
+Require-Bundle: org.fipro.eclipse.migration.e4.model;bundle-version="1.0.0"
+Export-Package: org.fipro.eclipse.migration.e4.service
