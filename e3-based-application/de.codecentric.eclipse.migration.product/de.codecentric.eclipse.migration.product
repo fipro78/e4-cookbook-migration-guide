@@ -12,15 +12,15 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/de.codecentric.eclipse.migration.ui/icons/cc_logo_16.png" i32="/de.codecentric.eclipse.migration.ui/icons/cc_logo_32.png"/>
+   <windowImages i16="/de.codecentric.eclipse.migration.ui/icons/eclipse16.png" i32="/de.codecentric.eclipse.migration.ui/icons/eclipse32.png"/>
 
 
    <launcher>
       <solaris/>
       <win useIco="false">
          <bmp
-            winSmallLow="/de.codecentric.eclipse.migration.ui/icons/alt_window16.gif"
-            winMediumLow="/de.codecentric.eclipse.migration.ui/icons/alt_window32.gif"/>
+            winSmallLow="/de.codecentric.eclipse.migration.ui/icons/eclipse16.gif"
+            winMediumLow="/de.codecentric.eclipse.migration.ui/icons/eclipse32.gif"/>
       </win>
    </launcher>
 

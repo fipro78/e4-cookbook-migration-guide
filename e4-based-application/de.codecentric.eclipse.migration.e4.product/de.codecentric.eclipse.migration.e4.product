@@ -3,6 +3,7 @@
 
 <product name="codecentric Migration Tutorial" uid="de.codecentric.eclipse.migration.e4" id="de.codecentric.eclipse.migration.e4.ui.MigrationTutorial" application="de.codecentric.eclipse.migration.e4.ui.application" version="1.0.0" useFeatures="true" includeLaunchers="true">
 
+
    <configIni use="default">
    </configIni>
 
@@ -13,16 +14,17 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/de.codecentric.eclipse.migration.e4.ui/icons/cc_logo_16.png" i32="/de.codecentric.eclipse.migration.e4.ui/icons/cc_logo_32.png"/>
+   <windowImages i16="/de.codecentric.eclipse.migration.e4.ui/icons/eclipse16.png" i32="/de.codecentric.eclipse.migration.e4.ui/icons/eclipse32.png"/>
 
    <launcher>
       <solaris/>
       <win useIco="false">
          <bmp
-            winSmallLow="/de.codecentric.eclipse.migration.e4.ui/icons/cc_logo_16.png"
-            winMediumLow="/de.codecentric.eclipse.migration.e4.ui/icons/cc_logo_32.png"/>
+            winSmallLow="/de.codecentric.eclipse.migration.e4.ui/icons/eclipse16.gif"
+            winMediumLow="/de.codecentric.eclipse.migration.e4.ui/icons/eclipse32.gif"/>
       </win>
    </launcher>
+
 
    <vm>
    </vm>

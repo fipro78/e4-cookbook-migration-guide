@@ -73,7 +73,7 @@
          </property>
          <property
                name="windowImages"
-               value="icons/cc_logo_16.png,icons/cc_logo_32.png">
+               value="icons/eclipse16.png,icons/eclipse32.png">
          </property>
       </product>
    </extension>
