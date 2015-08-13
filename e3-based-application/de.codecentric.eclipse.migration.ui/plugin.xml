@@ -7,7 +7,7 @@
          point="org.eclipse.core.runtime.applications">
       <application>
          <run
-               class="de.codecentric.eclipse.migration.ui.Application">
+               class="org.fipro.eclipse.migration.ui.Application">
          </run>
       </application>
    </extension>
@@ -15,30 +15,30 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             name="RCP Perspective"
-            class="de.codecentric.eclipse.migration.ui.Perspective"
-            id="de.codecentric.eclipse.migration.ui.perspective">
+            class="org.fipro.eclipse.migration.ui.Perspective"
+            id="org.fipro.eclipse.migration.ui.perspective">
       </perspective>
    </extension>
    <extension
          point="org.eclipse.ui.views">
       <view
-            class="de.codecentric.eclipse.migration.ui.view.overview.OverviewView"
+            class="org.fipro.eclipse.migration.ui.view.overview.OverviewView"
             icon="icons/prop_ps.gif"
-            id="de.codecentric.eclipse.migration.ui.overview"
+            id="org.fipro.eclipse.migration.ui.overview"
             name="Overview"
             restorable="true">
       </view>
       <view
-            class="de.codecentric.eclipse.migration.ui.view.DetailView"
+            class="org.fipro.eclipse.migration.ui.view.DetailView"
             icon="icons/editor.gif"
-            id="de.codecentric.eclipse.migration.ui.detailview"
+            id="org.fipro.eclipse.migration.ui.detailview"
             name="Details"
             restorable="true">
       </view>
       <view
-            class="de.codecentric.eclipse.migration.ui.view.DescriptionView"
+            class="org.fipro.eclipse.migration.ui.view.DescriptionView"
             icon="icons/environment_obj.gif"
-            id="de.codecentric.eclipse.migration.ui.descview"
+            id="org.fipro.eclipse.migration.ui.descview"
             name="Description"
             restorable="true">
       </view>
@@ -48,20 +48,20 @@
       <perspectiveExtension
             targetID="*">
          <view
-               id="de.codecentric.eclipse.migration.ui.overview"
+               id="org.fipro.eclipse.migration.ui.overview"
                minimized="false"
                relationship="left"
                relative="org.eclipse.ui.editorss">
          </view>
          <view
-               id="de.codecentric.eclipse.migration.ui.descview"
+               id="org.fipro.eclipse.migration.ui.descview"
                minimized="false"
                ratio="0.75"
                relationship="bottom"
-               relative="de.codecentric.eclipse.migration.ui.overview">
+               relative="org.fipro.eclipse.migration.ui.overview">
          </view>
          <actionSet
-               id="de.codecentric.eclipse.migration.ui.fileActionSet">
+               id="org.fipro.eclipse.migration.ui.fileActionSet">
          </actionSet>
       </perspectiveExtension>
    </extension>
@@ -69,11 +69,11 @@
          id="MigrationTutorial"
          point="org.eclipse.core.runtime.products">
       <product
-            application="de.codecentric.eclipse.migration.ui.application"
-            name="codecentric Migration Tutorial">
+            application="org.fipro.eclipse.migration.ui.application"
+            name="Migration Tutorial">
          <property
                name="appName"
-               value="codecentric Migration Tutorial">
+               value="Migration Tutorial">
          </property>
          <property
                name="windowImages"
@@ -89,7 +89,7 @@
          <menu
                label="Commands">
             <command
-                  commandId="de.codecentric.eclipse.migration.ui.dialogCommand"
+                  commandId="org.fipro.eclipse.migration.ui.dialogCommand"
                   label="Dialog öffnen"
                   style="push">
             </command>
@@ -104,10 +104,10 @@
    <extension
          point="org.eclipse.ui.actionSets">
       <actionSet
-            id="de.codecentric.eclipse.migration.ui.fileActionSet"
+            id="org.fipro.eclipse.migration.ui.fileActionSet"
             label="Actions">
          <menu
-               id="de.codecentric.eclipse.migration.ui.file"
+               id="org.fipro.eclipse.migration.ui.file"
                label="Actions"
                path="file">
             <separator
@@ -115,10 +115,10 @@
             </separator>
          </menu>
          <action
-               class="de.codecentric.eclipse.migration.ui.action.OpenDialogAction"
-               id="de.codecentric.eclipse.migration.ui.dialogAction"
+               class="org.fipro.eclipse.migration.ui.action.OpenDialogAction"
+               id="org.fipro.eclipse.migration.ui.dialogAction"
                label="Open Dialog Action"
-               menubarPath="de.codecentric.eclipse.migration.ui.file/slot1"
+               menubarPath="org.fipro.eclipse.migration.ui.file/slot1"
                style="push">
          </action>
       </actionSet>
@@ -126,32 +126,32 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            id="de.codecentric.eclipse.migration.ui.dialogCommand"
+            id="org.fipro.eclipse.migration.ui.dialogCommand"
             name="Open Dialog Command">
       </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="de.codecentric.eclipse.migration.ui.handler.OpenDialogHandler"
-            commandId="de.codecentric.eclipse.migration.ui.dialogCommand">
+            class="org.fipro.eclipse.migration.ui.handler.OpenDialogHandler"
+            commandId="org.fipro.eclipse.migration.ui.dialogCommand">
       </handler>
    </extension>
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            class="de.codecentric.eclipse.migration.ui.editor.PersonEditor"
+            class="org.fipro.eclipse.migration.ui.editor.PersonEditor"
             default="false"
             icon="icons/editor.gif"
-            id="de.codecentric.eclipse.migration.ui.editor.personeditor"
+            id="org.fipro.eclipse.migration.ui.editor.personeditor"
             name="Person Editor">
       </editor>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="de.codecentric.eclipse.migration.ui.preferences.DescriptionPreferencePage"
-            id="de.codecentric.eclipse.migration.ui.page1"
+            class="org.fipro.eclipse.migration.ui.preferences.DescriptionPreferencePage"
+            id="org.fipro.eclipse.migration.ui.page1"
             name="Description">
       </page>
    </extension>

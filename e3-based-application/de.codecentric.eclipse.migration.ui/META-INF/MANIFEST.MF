@@ -1,13 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Ui
-Bundle-SymbolicName: de.codecentric.eclipse.migration.ui;singleton:=true
+Bundle-Name: Migration Application UI
+Bundle-SymbolicName: org.fipro.eclipse.migration.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.codecentric.eclipse.migration.ui.Activator
+Bundle-Activator: org.fipro.eclipse.migration.ui.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- de.codecentric.eclipse.migration.model;bundle-version="1.0.0",
- de.codecentric.eclipse.migration.service;bundle-version="1.0.0",
+ org.fipro.eclipse.migration.model;bundle-version="1.0.0",
+ org.fipro.eclipse.migration.service;bundle-version="1.0.0",
  org.eclipse.core.databinding;bundle-version="1.4.0",
  org.eclipse.core.databinding.beans;bundle-version="1.2.100",
  org.eclipse.core.databinding.property;bundle-version="1.4.0",

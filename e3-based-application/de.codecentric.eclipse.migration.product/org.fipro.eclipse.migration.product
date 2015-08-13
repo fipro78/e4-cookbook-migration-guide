@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Migration Tutorial" uid="org.fipro.eclipse.migration" id="org.fipro.eclipse.migration.ui.MigrationTutorial" application="org.fipro.eclipse.migration.ui.application" version="1.0.0" useFeatures="true" includeLaunchers="true">
+
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/org.fipro.eclipse.migration.ui/icons/eclipse16.png" i32="/org.fipro.eclipse.migration.ui/icons/eclipse32.png"/>
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp
+            winSmallLow="/org.fipro.eclipse.migration.ui/icons/eclipse16.gif"
+            winMediumLow="/org.fipro.eclipse.migration.ui/icons/eclipse32.gif"/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.fipro.eclipse.migration.feature" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.rcp" version="3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>

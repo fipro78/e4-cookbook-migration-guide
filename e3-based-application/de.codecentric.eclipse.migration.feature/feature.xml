@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.codecentric.eclipse.migration.feature"
+      id="org.fipro.eclipse.migration.feature"
       label="Feature"
       version="1.0.0.qualifier">
 
@@ -17,21 +17,21 @@
    </license>
 
    <plugin
-         id="de.codecentric.eclipse.migration.ui"
+         id="org.fipro.eclipse.migration.model"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.codecentric.eclipse.migration.model"
+         id="org.fipro.eclipse.migration.service"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.codecentric.eclipse.migration.service"
+         id="org.fipro.eclipse.migration.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
