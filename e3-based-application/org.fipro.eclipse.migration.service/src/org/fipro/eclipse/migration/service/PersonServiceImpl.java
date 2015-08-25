@@ -12,7 +12,7 @@ import org.fipro.eclipse.migration.model.Person;
  * Class that acts as service for accessing numerous {@link Person}s.
  * The values are randomly put together out of names and places from "The Simpsons"
  */
-public class PersonService {
+public class PersonServiceImpl {
  
 	public static String[] maleNames = {
 		"Bart", 

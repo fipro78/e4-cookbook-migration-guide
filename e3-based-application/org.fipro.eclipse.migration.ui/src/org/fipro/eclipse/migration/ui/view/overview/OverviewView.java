@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 import org.fipro.eclipse.migration.model.Person;
-import org.fipro.eclipse.migration.service.PersonService;
+import org.fipro.eclipse.migration.service.PersonServiceImpl;
 import org.fipro.eclipse.migration.ui.editor.PersonEditor;
 import org.fipro.eclipse.migration.ui.editor.PersonEditorInput;
 
@@ -31,7 +31,7 @@ public class OverviewView extends ViewPart {
 	public void createPartControl(Composite parent) {
 		parent.setLayout(new GridLayout());
 		
-		IObservable list = new WritableList(PersonService.getPersons(10), Person.class);
+		IObservable list = new WritableList(PersonServiceImpl.getPersons(10), Person.class);
 
 		viewer = new TableViewer(parent, SWT.MULTI|SWT.BORDER|SWT.H_SCROLL|SWT.V_SCROLL|SWT.FULL_SELECTION);
 		ObservableListContentProvider cp = new ObservableListContentProvider();
