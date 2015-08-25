@@ -14,9 +14,10 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            name="RCP Perspective"
             class="org.fipro.eclipse.migration.ui.Perspective"
-            id="org.fipro.eclipse.migration.ui.perspective">
+            icon="icons/eclipse16.png"
+            id="org.fipro.eclipse.migration.ui.perspective"
+            name="RCP Perspective">
       </perspective>
    </extension>
    <extension
