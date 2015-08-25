@@ -35,13 +35,16 @@ public class OverviewView {
 	TableViewer viewer;
 	
 	@Inject
-	ESelectionService selectionService;
+	private ESelectionService selectionService;
+	
+	@Inject
+	private PersonService personService;
 	
 	@PostConstruct
 	public void createPartControl(Composite parent, final IWorkbenchPage workbenchPage) {
 		parent.setLayout(new GridLayout());
 		
-		IObservable list = new WritableList(PersonService.getPersons(10), Person.class);
+		IObservable list = new WritableList(personService.getPersons(10), Person.class);
 
 		viewer = new TableViewer(parent, SWT.MULTI|SWT.BORDER|SWT.H_SCROLL|SWT.V_SCROLL|SWT.FULL_SELECTION);
 		ObservableListContentProvider cp = new ObservableListContentProvider();
