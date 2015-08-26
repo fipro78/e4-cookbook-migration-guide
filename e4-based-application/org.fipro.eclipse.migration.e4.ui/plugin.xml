@@ -27,16 +27,6 @@
       </product>
    </extension>
    <extension
-         point="org.eclipse.ui.editors">
-      <editor
-            default="false"
-            name="Person Editor"
-            icon="icons/editor.gif"
-            class="org.fipro.eclipse.migration.e4.ui.editor.PersonEditor"
-            id="org.fipro.eclipse.migration.ui.editor.personeditor">
-      </editor>
-   </extension>
-   <extension
          id="org.fipro.eclipse.migration.e4.ui.fragment"
          point="org.eclipse.e4.workbench.model">
       <fragment

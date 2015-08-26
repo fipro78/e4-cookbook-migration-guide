@@ -33,9 +33,12 @@
           </children>
         </children>
         <children xsi:type="basic:PartSashContainer" xmi:id="_5wsr8EtkEeWNpdqOMk6htg" elementId="org.fipro.eclipse.migration.e4.ui.partsashcontainer.2">
-          <children xsi:type="basic:PartStack" xmi:id="_F1kWkEtmEeWNpdqOMk6htg" elementId="org.eclipse.ui.editorss"/>
+          <children xsi:type="basic:PartStack" xmi:id="_F1kWkEtmEeWNpdqOMk6htg" elementId="org.eclipse.ui.editorss">
+            <tags>NoAutoCollapse</tags>
+          </children>
         </children>
       </children>
     </elements>
   </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_AMYCYEvHEeWuasft3lWixA" featurename="descriptors" parentElementId="org.eclipse.e4.legacy.ide.application"/>
 </fragment:ModelFragments>
