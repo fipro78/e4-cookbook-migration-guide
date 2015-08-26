@@ -25,32 +25,31 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.PartInitException;
 import org.fipro.eclipse.migration.e4.model.Person;
 import org.fipro.eclipse.migration.e4.model.Person.Gender;
 
 public class PersonEditor {
 
-	@Inject
-	private MDirtyable dirtyable;
-
 	public static final String ID = "org.fipro.eclipse.migration.ui.editor.personeditor";
-	
+
 	public static final String CONTRIBUTION_URI = "bundleclass://org.fipro.eclipse.migration.e4.ui/org.fipro.eclipse.migration.e4.ui.editor.PersonEditor";
 
 	public static final String PERSON_INPUT_DATA = "personInputData";
+	
+	@Inject
+	private MDirtyable dirtyable;
 
-	Person person;
-	Person activePerson;
-
-	boolean dirty = false;
+	private Person person;
+	private Person activePerson;
 
 	@Inject
-	public void init(MPart part) throws PartInitException {
+	public void init(MPart part) {
 		Map<String, Object> transientData = part.getTransientData();
-		
-		// note that we are using transient data here, because the editor is not persisted anyway.
-		// In order to persist the editor between sessions using part.getPersistedState(); is necessary
+
+		// note that we are using transient data here, because the editor is not
+		// persisted anyway.
+		// In order to persist the editor between sessions using
+		// part.getPersistedState(); is necessary
 		if (!(transientData.get(PERSON_INPUT_DATA) instanceof Person)) {
 			throw new RuntimeException("You forgot to pass the actual person as transient data input");
 		}
