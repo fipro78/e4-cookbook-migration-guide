@@ -33,7 +33,9 @@
           </children>
         </children>
         <children xsi:type="basic:PartSashContainer" xmi:id="_5wsr8EtkEeWNpdqOMk6htg" elementId="org.fipro.eclipse.migration.e4.ui.partsashcontainer.2">
-          <children xsi:type="basic:PartStack" xmi:id="_WF6aEEyOEeWs2sP0SSkEQw" elementId="org.fipro.eclipse.migration.e4.ui.partstack.editor"/>
+          <children xsi:type="basic:PartStack" xmi:id="_WF6aEEyOEeWs2sP0SSkEQw" elementId="org.fipro.eclipse.migration.e4.ui.partstack.editor">
+            <tags>NoAutoCollapse</tags>
+          </children>
         </children>
       </children>
     </elements>
