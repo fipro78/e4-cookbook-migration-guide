@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse Migration Tutorial" uid="org.fipro.eclipse.migration.e4" id="org.fipro.eclipse.migration.e4.ui.MigrationTutorial" application="org.fipro.eclipse.migration.e4.ui.application" version="1.0.0" useFeatures="true" includeLaunchers="true">
-
+<product name="Eclipse Migration Tutorial" uid="org.fipro.eclipse.migration.e4" id="org.fipro.eclipse.migration.e4.ui.MigrationTutorial" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -25,7 +24,6 @@
       </win>
    </launcher>
 
-
    <vm>
    </vm>
 
@@ -34,7 +32,6 @@
 
    <features>
       <feature id="org.fipro.eclipse.migration.e4.feature" version="1.0.0.qualifier"/>
-      <feature id="org.eclipse.rcp"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.emf.common"/>
       <feature id="org.eclipse.e4.rcp"/>

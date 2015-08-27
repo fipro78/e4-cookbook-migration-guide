@@ -21,7 +21,7 @@
       </children>
     </elements>
   </fragments>
-  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_cc758EtDEeWNpdqOMk6htg" featurename="snippets" parentElementId="org.eclipse.e4.legacy.ide.application">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_cc758EtDEeWNpdqOMk6htg" featurename="children" parentElementId="org.fipro.eclipse.migration.e4.ui.perspectivestack.0">
     <elements xsi:type="advanced:Perspective" xmi:id="_gSy7wEtEEeWNpdqOMk6htg" elementId="org.fipro.eclipse.migration.ui.perspective" label="RCP Perspective" iconURI="" tooltip="">
       <children xsi:type="basic:PartSashContainer" xmi:id="_0ZvxAEtGEeWNpdqOMk6htg" elementId="org.fipro.eclipse.migration.e4.ui.partsashcontainer.0" horizontal="true">
         <children xsi:type="basic:PartSashContainer" xmi:id="_zexa4EtkEeWNpdqOMk6htg" elementId="org.fipro.eclipse.migration.e4.ui.partsashcontainer.1">
@@ -33,12 +33,9 @@
           </children>
         </children>
         <children xsi:type="basic:PartSashContainer" xmi:id="_5wsr8EtkEeWNpdqOMk6htg" elementId="org.fipro.eclipse.migration.e4.ui.partsashcontainer.2">
-          <children xsi:type="basic:PartStack" xmi:id="_F1kWkEtmEeWNpdqOMk6htg" elementId="org.eclipse.ui.editorss">
-            <tags>NoAutoCollapse</tags>
-          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_WF6aEEyOEeWs2sP0SSkEQw" elementId="org.fipro.eclipse.migration.e4.ui.partstack.editor"/>
         </children>
       </children>
     </elements>
   </fragments>
-  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_AMYCYEvHEeWuasft3lWixA" featurename="descriptors" parentElementId="org.eclipse.e4.legacy.ide.application"/>
 </fragment:ModelFragments>

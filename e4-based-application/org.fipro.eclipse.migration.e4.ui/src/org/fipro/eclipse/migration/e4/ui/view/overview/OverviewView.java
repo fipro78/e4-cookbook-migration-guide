@@ -2,6 +2,7 @@ package org.fipro.eclipse.migration.e4.ui.view.overview;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -28,7 +29,6 @@ import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.IWorkbenchPage;
 import org.fipro.eclipse.migration.e4.model.Person;
 import org.fipro.eclipse.migration.e4.service.PersonService;
 import org.fipro.eclipse.migration.e4.ui.editor.PersonEditor;
@@ -53,7 +53,7 @@ public class OverviewView {
 	private MApplication app;
 
 	@PostConstruct
-	public void createPartControl(Composite parent, final IWorkbenchPage workbenchPage) {
+	public void createPartControl(Composite parent) {
 		parent.setLayout(new GridLayout());
 
 		IObservable list = new WritableList(personService.getPersons(10), Person.class);
@@ -121,24 +121,33 @@ public class OverviewView {
 						}
 					});
 
-					MPart personEditor = modelService.createModelElement(MPart.class);
+					String editorID = PersonEditor.ID + "_" + person.getId();
 					
-					personEditor.setContributionURI(PersonEditor.CONTRIBUTION_URI);
-					personEditor.setIconURI("platform:/plugin/org.fipro.eclipse.migration.e4.ui/icons/editor.gif");
-					personEditor.setElementId(PersonEditor.ID);
-					String label = person.getFirstName() + " " + person.getLastName();
-					personEditor.setLabel(label);
-					personEditor.setTooltip(label + " editor");
-					personEditor.setCloseable(true);
-					personEditor.getTags().add("Editor");
-
-					// set the person as transient data
-					personEditor.getTransientData().put(PersonEditor.PERSON_INPUT_DATA, person);
-
-					// find the editorss partstack, which is defined in the perspective snippet in the fragment.e4xmi
-					MPartStack stack = (MPartStack) modelService.find(
-							"org.eclipse.ui.editorss", app);
-					stack.getChildren().add(personEditor);
+					List<MPart> parts = modelService.findElements(app, editorID, MPart.class, null);
+					MPart personEditor = null;
+					if (parts == null || parts.isEmpty()) {
+						personEditor = modelService.createModelElement(MPart.class);
+						
+						personEditor.setContributionURI(PersonEditor.CONTRIBUTION_URI);
+						personEditor.setIconURI("platform:/plugin/org.fipro.eclipse.migration.e4.ui/icons/editor.gif");
+						personEditor.setElementId(editorID);
+						String label = person.getFirstName() + " " + person.getLastName();
+						personEditor.setLabel(label);
+						personEditor.setTooltip(label + " editor");
+						personEditor.setCloseable(true);
+						personEditor.getTags().add("Editor");
+						
+						// set the person as transient data
+						personEditor.getTransientData().put(PersonEditor.PERSON_INPUT_DATA, person);
+						
+						// find the editor partstack, which is defined in the perspective contribution in the fragment.e4xmi
+						// in compat mode the id is org.eclipse.ui.editorss, in plain e4 this needs to be changed
+						MPartStack stack = (MPartStack) modelService.find("org.fipro.eclipse.migration.e4.ui.partstack.editor", app);
+						stack.getChildren().add(personEditor);
+					}
+					else {
+						personEditor = parts.get(0);
+					}
 					
 					partService.showPart(personEditor, PartState.ACTIVATE);
 				}

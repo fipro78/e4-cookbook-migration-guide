@@ -2,19 +2,10 @@
 <plugin>
 
    <extension
-         id="application"
-         point="org.eclipse.core.runtime.applications">
-      <application>
-         <run
-               class="org.fipro.eclipse.migration.e4.ui.Application">
-         </run>
-      </application>
-   </extension>
-   <extension
          id="MigrationTutorial"
          point="org.eclipse.core.runtime.products">
       <product
-            application="org.fipro.eclipse.migration.e4.ui.application"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
             name="Eclipse Migration Tutorial">
          <property
                name="appName"
