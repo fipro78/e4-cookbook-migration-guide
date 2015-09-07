@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
 <fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_aOmlwMG9EeSnBsf5HSaYaA">
+  <imports xsi:type="commands:BindingContext" xmi:id="_3lLMwFVuEeWk-7ISW4lJaQ" elementId="org.eclipse.ui.contexts.dialogAndWindow"/>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_8AtjcMG_EeSnBsf5HSaYaA" featurename="commands" parentElementId="org.eclipse.e4.legacy.ide.application">
     <elements xsi:type="commands:Command" xmi:id="_-aoBIMG_EeSnBsf5HSaYaA" elementId="org.fipro.eclipse.migration.e4.ui.command.openDialogAction" commandName="Open Dialog"/>
     <elements xsi:type="commands:Command" xmi:id="_i0ypkMHrEeSnBsf5HSaYaA" elementId="org.fipro.eclipse.migration.e4.ui.command.openDialog" commandName="Open Dialog"/>
     <elements xsi:type="commands:Command" xmi:id="_fzquUMMREeSnBsf5HSaYaA" elementId="org.fipro.eclipse.migration.e4.ui.command.preferences" commandName="Preferences"/>
+    <elements xsi:type="commands:Command" xmi:id="_piJzYFVtEeWk-7ISW4lJaQ" elementId="org.eclipse.ui.file.save" commandName="Save"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_3CDREMG_EeSnBsf5HSaYaA" featurename="handlers" parentElementId="org.eclipse.e4.legacy.ide.application">
     <elements xsi:type="commands:Handler" xmi:id="_7apB8MG_EeSnBsf5HSaYaA" elementId="org.fipro.eclipse.migration.e4.ui.handler.0" contributionURI="bundleclass://org.fipro.eclipse.migration.e4.ui/org.fipro.eclipse.migration.e4.ui.action.OpenDialogAction" command="_-aoBIMG_EeSnBsf5HSaYaA"/>
     <elements xsi:type="commands:Handler" xmi:id="_oSuccMHsEeSnBsf5HSaYaA" elementId="org.fipro.eclipse.migration.e4.ui.handler.1" contributionURI="bundleclass://org.fipro.eclipse.migration.e4.ui/org.fipro.eclipse.migration.e4.ui.handler.OpenDialogHandler" command="_i0ypkMHrEeSnBsf5HSaYaA"/>
     <elements xsi:type="commands:Handler" xmi:id="__Ma54MMREeSnBsf5HSaYaA" elementId="org.fipro.eclipse.migration.e4.ui.handler.2" contributionURI="bundleclass://org.fipro.eclipse.migration.e4.ui/org.fipro.eclipse.migration.e4.ui.handler.PreferencesHandler" command="_fzquUMMREeSnBsf5HSaYaA"/>
+    <elements xsi:type="commands:Handler" xmi:id="_sjCxgFVtEeWk-7ISW4lJaQ" elementId="org.fipro.eclipse.migration.e4.ui.handler.3" contributionURI="bundleclass://org.fipro.eclipse.migration.e4.ui/org.fipro.eclipse.migration.e4.ui.handler.SaveHandler" command="_piJzYFVtEeWk-7ISW4lJaQ"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="__vQ40MG_EeSnBsf5HSaYaA" featurename="menuContributions" parentElementId="org.eclipse.e4.legacy.ide.application">
     <elements xsi:type="menu:MenuContribution" xmi:id="_LDNSQMHAEeSnBsf5HSaYaA" elementId="org.fipro.eclipse.migration.e4.ui.menucontribution.0" parentId="org.eclipse.ui.main.menu">
@@ -38,6 +41,11 @@
           </children>
         </children>
       </children>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_yUVlQFVuEeWk-7ISW4lJaQ" featurename="bindingTables" parentElementId="org.eclipse.e4.legacy.ide.application">
+    <elements xsi:type="commands:BindingTable" xmi:id="_2mldkFVuEeWk-7ISW4lJaQ" elementId="org.fipro.eclipse.migration.e4.ui.bindingtable.0" bindingContext="_3lLMwFVuEeWk-7ISW4lJaQ">
+      <bindings xmi:id="_61HTgFVuEeWk-7ISW4lJaQ" elementId="org.fipro.eclipse.migration.e4.ui.keybinding.0" keySequence="M1+S" command="_piJzYFVtEeWk-7ISW4lJaQ"/>
     </elements>
   </fragments>
 </fragment:ModelFragments>
