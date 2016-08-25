@@ -16,6 +16,7 @@ import org.eclipse.swt.widgets.Text;
 import org.fipro.eclipse.migration.e4.model.Person;
 import org.fipro.eclipse.migration.e4.model.Person.Gender;
 
+@SuppressWarnings("restriction")
 public class DescriptionView {
 
 	Text description;

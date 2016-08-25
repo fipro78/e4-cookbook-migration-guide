@@ -15,13 +15,14 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.e4.ui.services;bundle-version="1.1.0",
  org.eclipse.e4.core.di.extensions;bundle-version="0.12.0",
  javax.inject,
- org.eclipse.osgi.services;bundle-version="3.5.0",
  org.fipro.eclipse.migration.e4.model;bundle-version="1.0.0",
  org.fipro.eclipse.migration.e4.service;bundle-version="1.0.0",
  org.fipro.eclipse.migration.e4.service.preferences;bundle-version="1.0.0",
  org.eclipse.swt;bundle-version="3.104.0",
  org.eclipse.jface;bundle-version="3.11.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Service-Component: OSGI-INF/preferences.xml
-Import-Package: javax.inject;version="1.0.0"
+Service-Component: OSGI-INF/org.fipro.eclipse.migration.e4.ui.preferences.DescriptionPreferenceContribution.xml
+Import-Package: javax.inject;version="1.0.0",
+ org.osgi.service.component.annotations;version="1.2.0";resolution:=optional,
+ org.osgi.service.event;version="1.3.0"
 Bundle-ActivationPolicy: lazy

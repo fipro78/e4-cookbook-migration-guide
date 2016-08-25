@@ -8,11 +8,13 @@ import java.util.Random;
 
 import org.fipro.eclipse.migration.e4.model.Person;
 import org.fipro.eclipse.migration.e4.service.PersonService;
+import org.osgi.service.component.annotations.Component;
  
 /**
  * Class that acts as service for accessing numerous {@link Person}s.
  * The values are randomly put together out of names and places from "The Simpsons"
  */
+@Component
 public final class PersonServiceImpl implements PersonService {
  
 	public String[] maleNames = {

@@ -6,7 +6,16 @@ import org.eclipse.e4.core.di.suppliers.IRequestor;
 import org.eclipse.jface.preference.PreferenceManager;
 import org.fipro.eclipse.migration.e4.service.preferences.ContributedPreferenceNode;
 import org.fipro.eclipse.migration.e4.service.preferences.PreferenceNodeContribution;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.osgi.service.component.annotations.ReferencePolicy;
 
+@SuppressWarnings("restriction")
+@Component(
+		service=ExtendedObjectSupplier.class,
+		property="dependency.injection.annotation=org.fipro.eclipse.migration.e4.service.preferences.PrefMgr"
+)
 public class PreferenceManagerSupplier extends ExtendedObjectSupplier {
 
 	PreferenceManager mgr;
@@ -23,7 +32,11 @@ public class PreferenceManagerSupplier extends ExtendedObjectSupplier {
 		return mgr;
 	}
 	
-	public synchronized void addPreferenceNode(PreferenceNodeContribution node) {
+	@Reference(
+			cardinality=ReferenceCardinality.MULTIPLE,
+			policy=ReferencePolicy.DYNAMIC
+	)
+	synchronized void addPreferenceNode(PreferenceNodeContribution node) {
 		for (ContributedPreferenceNode contribNode : node.getPreferenceNodes()) {
 			if (contribNode.getPath() == null) {
 				getManager().addToRoot(contribNode);
@@ -34,7 +47,7 @@ public class PreferenceManagerSupplier extends ExtendedObjectSupplier {
 		}
 	}
 	
-	public synchronized void removePreferenceNode(PreferenceNodeContribution node) {
+	synchronized void removePreferenceNode(PreferenceNodeContribution node) {
 		for (ContributedPreferenceNode contribNode : node.getPreferenceNodes()) {
 			getManager().remove(contribNode);
 		}
